@@ -1,0 +1,66 @@
+@import "bootstrap";
+
+body {
+	background-color: #F5F5F1;
+	color: #333333;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-default {
+	background-color: #EFEFEB;
+}
+
+.navbar-default .navbar-brand {
+	font-family: guardian-egyptt, georgia, serif;
+	font-weight: 400;
+	color: #d5641c;
+	font-size: 30px;
+}
+
+/* This code sets the attributes for the nav bar buttons*/
+.navbar-default .navbar-nav > li >a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0192B5;	
+}
+
+/* Centers the listings in the columns. Gets picked up by <div class=center> on the 
+index.html.erb file.  */
+.center {
+	text-align: center;
+}
+
+/*Since each row has four columns, this command left justifies new rows. Gets picked
+up by <div class="col-md-3"> in the index.html.erb file.*/
+.col-md-3:nth-child(4n+1){
+	clear: right;
+}
+
+/*Gets picked up by <div class="col-md-8"> in the show.html.erb file.*/
+.col-md-8 {
+	h3 {font-size: 45px;}
+	h5 {font-size: 25px;}
+	p {font-size: 18px;}
+		
+}
+
+/* Sets attributes for the caption tag on the listings page */
+.caption {
+	h3{
+		font-size: 17px;
+		margin: 2px;
+	}
+	p {
+		font-size: 15px;
+		margin: 0px;
+	}
+}
+
+/* Sets background image for bootstrap jumbotron banner */
+.jumbotron {
+	background-image: url('https://dl.dropboxusercontent.com/s/vzejpv6iha2ru23/jumbotron.jpg?dl=0');
+	h1,h2 {
+		font-family: guardian-egyptt, georgia, serif;
+	}
+}

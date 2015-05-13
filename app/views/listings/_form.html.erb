@@ -1,0 +1,37 @@
+<%= form_for(@listing, :html => { :multipart => true }) do |f| %>
+  <% if @listing.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h4>
+
+      <ul>
+      <% @listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <% if @listing.image.exists? %>
+      <%= f.label "Current image file name: " %><br>
+      <%= image_tag @listing.image_file_name %><br/>
+    <% end %>
+  </div>  
+  <div class="form-group">
+    <%= f.label "New image file name: " %><br>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary"%>
+  </div>
+<% end %>
