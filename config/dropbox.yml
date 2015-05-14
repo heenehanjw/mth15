@@ -1,7 +1,7 @@
 # app_secret and access_token_secret are in application.yml
-app_key: "nzsdzwgb8gnibtt"
+app_key: "wuocfo996wbfqnb"
 app_secret: <%= ENV["APP_SECRET"] %>
-access_token: "xxx2pulw4m3a75r6"
+access_token: "6uqhtofzruag6iet"
 access_token_secret: <%= ENV["ACCESS_TOKEN_SECRET"] %>
-user_id: "njizm4ornm0w6tg"
+user_id: "416768356"
 access_type: "app_folder"
