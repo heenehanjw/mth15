@@ -20,7 +20,17 @@
     <%= f.label :description %><br>
     <%= f.text_area :description, class: "form-control" %>
   </div>
+
   <div class="form-group">
+    <%= f.label :category %><br>
+    <%= f.radio_button(:category, "Vienesse Pastry") %> <%= f.label(:category_category1, "Vienesse Pastry") %><br>
+    <%= f.radio_button(:category, "Cakes and Tortes") %> <%= f.label(:category_category2, "Cakes and Tortes")%> <br>
+    <%= f.radio_button(:category, "Plated Desserts") %> <%= f.label(:category_category3, "Plated Desserts") %><br>
+    <%= f.radio_button(:category, "Breads, Rolls and Breakfast Pastry") %> <%= f.label(:category_category3, "Breads, Rolls and Breakfast Pastry") %> <br>
+    <%= f.radio_button(:category, "Misc") %> <%= f.label(:category_category3, "Misc") %> 
+  </div>  
+ <hr>
+ <div class="form-group">
     <% if @listing.image.exists? %>
       <%= f.label "Current image file name: " %><br>
       <%= image_tag @listing.image_file_name %><br/>

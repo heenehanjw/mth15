@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   
   get 'pages/about'
   get 'pages/contact'
+  get 'pages/mthhome'
   get 'seller' => "listings#seller"
   get 'listview' => "listings#listview"
+  get 'listingbycat' => "listings#listingbycat"
+  get 'listingbycattable' => "listings#listingbycattable"
 
-  root 'listings#index' 
+  # root 'listings#index' 
+  root 'pages#mthhome' 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

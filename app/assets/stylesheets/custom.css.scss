@@ -17,6 +17,13 @@ body {
 	font-size: 30px;
 }
 
+.hometitle {
+	font-family: guardian-egyptt, georgia, serif;
+	font-weight: 400;
+	color: #333333;
+	font-size: 15px;
+}
+
 /* This code sets the attributes for the nav bar buttons*/
 .navbar-default .navbar-nav > li >a {
 	font-family: Arial, Helvetica, sans-serif;
@@ -34,8 +41,9 @@ index.html.erb file.  */
 /*Since each row has four columns, this command left justifies new rows. Gets picked
 up by <div class="col-md-3"> in the index.html.erb file.*/
 .col-md-3:nth-child(4n+1){
-	clear: right;
+	clear: left;
 }
+
 
 /*Gets picked up by <div class="col-md-8"> in the show.html.erb file.*/
 .col-md-8 {
@@ -48,8 +56,10 @@ up by <div class="col-md-3"> in the index.html.erb file.*/
 /* Sets attributes for the caption tag on the listings page */
 .caption {
 	h3{
+		font-weight: bold;
 		font-size: 17px;
 		margin: 2px;
+		padding-bottom: 25px;
 	}
 	p {
 		font-size: 15px;

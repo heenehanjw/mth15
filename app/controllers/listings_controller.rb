@@ -4,8 +4,12 @@ class ListingsController < ApplicationController
   before_filter :check_user, only: [:edit, :update, :destroy]
 
 
-  def seller 
-    @listings = Listing.all.order("created_at DESC")
+  def listingbycat 
+    @listings = Listing.where("category = ?",params[:category]).order("created_at DESC")
+  end
+
+  def listingbycattable
+    @listings = Listing.where("category = ?",params[:category]).order("created_at DESC")
   end
 
   def listview 
@@ -81,7 +85,7 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :image)
+      params.require(:listing).permit(:name, :description, :category, :image)
     end
 
     def check_user
