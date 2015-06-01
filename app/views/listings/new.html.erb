@@ -3,4 +3,17 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', listings_path, class:"btn btn-link" %>
+<% case session[:viewtype] %>
+	<% when 'table' %>
+	  <% if session[:category] != "none"%>
+	  	<%= link_to 'Back to Listings', listingbycattable_path(category: session[:category]), class:"btn btn-link" %>
+	  <% else %>
+	  	<%= link_to 'Back to Listings', listings_path, class:"btn btn-link" %>
+	  <% end %>
+	<% when 'list' %>
+	  <% if session[:category] != "none"%>
+	  	<%= link_to 'Back to Listings', listingbycat_path(category: session[:category]), class:"btn btn-link" %>
+	  <% else %>
+	  	<%= link_to 'Back to Listings', listview_path, class:"btn btn-link" %>
+	  <% end %>
+	<% end %>

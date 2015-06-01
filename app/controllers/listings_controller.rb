@@ -6,20 +6,28 @@ class ListingsController < ApplicationController
 
   def listingbycat 
     @listings = Listing.where("category = ?",params[:category]).order("created_at DESC")
+    session[:viewtype] = "list"
+    session[:category] = params[:category]
   end
 
   def listingbycattable
     @listings = Listing.where("category = ?",params[:category]).order("created_at DESC")
+    session[:viewtype] = "table"
+    session[:category] = params[:category]
   end
 
   def listview 
     @listings = Listing.all.order("created_at DESC")
+    session[:viewtype] = "list"
+    session[:category] = "none"
   end
 
   # GET /listings
   # GET /listings.json
   def index
     @listings = Listing.all.order("created_at DESC")
+    session[:viewtype] = "table"
+    session[:category] = "none"
   end
 
   # GET /listings/1
